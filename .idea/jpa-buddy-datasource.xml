@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-source-infos>
+      <data-source-info id="e852869c-5608-4f4c-a0d1-5d5396000b52" persistence-unit-name="Default" />
+      <data-source-info id="e852869c-5608-4f4c-a0d1-5d5396000b52" persistence-unit-name="evadb" />
+    </data-source-infos>
+  </component>
+</project>

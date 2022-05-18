@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="../../templates/templLayout.xhtml">
+    <ui:define name="content-placeholder">
+        <div>
+            <ui:repeat value="#{userController.findAll()}" var="user">
+                <div class="card">
+                    <h1>#{user.id}</h1>
+                    <h1>#{user.first_name}</h1>
+                    <h1>#{user.last_name}</h1>
+                </div>
+            </ui:repeat>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>

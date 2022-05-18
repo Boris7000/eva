@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="../../templates/templLayout.xhtml">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8;"/>
+    </h:head>
+
+    <ui:define name="content-placeholder">
+
+        <f:view>
+            <f:metadata>
+                <f:viewAction action="#{userController.findById(stringToLongConverter.convert(param.id))}"/>
+            </f:metadata>
+
+
+            <div class="card" style="width: 550px">
+                <h2>#{userController.e.first_name} #{userController.e.last_name}</h2>
+            </div>
+
+            <h:panelGroup class="card" rendered="#{userController.currentUser.id!=null
+            and userController.currentUser.id==userController.e.id}" style="width: 550px">
+                <h:form>
+                    <h:commandButton value="Edit profile info"
+                                     id="edit_btn"
+                                     styleClass="btn-primary"
+                                     action="#{navigationController.showChangeInfo()}">
+                        <f:ajax execute="@form" render="@all" />
+                    </h:commandButton>
+                </h:form>
+            </h:panelGroup>
+
+            <h:panelGroup class="card" rendered="#{userController.currentUser.id!=null
+            and userController.currentUser.id==userController.e.id}" style="width: 550px">
+
+                <h:form id="post-form">
+
+                    <ui:include src="../../templates/base-components/post/post-create.xhtml"/>
+
+                    <h:commandButton value="Post"
+                                     id="post_btn"
+                                     styleClass="btn-primary"
+                                     action="#{postController.createPost(userController.currentUser)}">
+                        <f:ajax execute="@form" render="@all" />
+                    </h:commandButton>
+                </h:form>
+            </h:panelGroup>
+
+            <ui:include src="../../templates/base-components/post/owner-post-list.xhtml"/>
+
+        </f:view>
+    </ui:define>
+</ui:composition>
+
+</html>

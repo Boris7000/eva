@@ -1,0 +1,69 @@
+
+:root {
+    --header-height: 48px;
+    --paginator-height: 51px;
+    --paginator-container-height: 67px;
+    --gray-bg:#ecedef;
+    --gray-border:#e6e7eb;
+    --gray-subtitle:#808b98;
+    --gray-placeholder: #d4d5de;
+    --gray-input-bg: #f1f2f4;
+    --gray-input-border: #dddfe2;
+    --gray-input-border-hover: #c3c7cb;
+    --white: white;
+    --main-font: Tahoma, sans-serif;
+
+    --color-text: #1E2022;
+
+    --color-card-bg: #ffffff;
+
+    --color-primary:#648ec8;
+    --color-primary-highlight:#82a9e0;
+    --color-secondary:#d07017;
+    --color-secondary-highlight:#ef933b;
+    --color-tertiary: #5bce6c;
+    --color-tertiary-highlight: #7be189;
+}
+
+div {
+    display: block;
+}
+
+nav {
+    display: block;
+}
+
+header {
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font);
+}
+
+body {
+    background-color: var(--gray-bg);
+    color: var(--color-text);
+}
+
+.page-body {
+    margin-top: var(--header-height);
+}
+
+.card {
+    border-style: solid;
+    border-color: var(--gray-border);
+    border-width: 1px;
+    border-radius: 10px;
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    margin: 10px auto;
+    padding: 1.5%;
+    width: 550px;
+}
+.cardTitle{
+    margin-bottom: 20px;
+}

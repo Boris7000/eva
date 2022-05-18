@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+      xml:lang="en" lang="en">
+<h:head>
+    <h:outputStylesheet library="css" name="topHeader.css"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8;"/>
+</h:head>
+<div class="scroll_fix">
+    <div class="page-header-cont">
+        <div class="page-header">
+            <div class="page-header-home-link">
+                <h:graphicImage styleClass="page-header-icon"
+                                name="logo.png"
+                                library="img"
+                                alt="logo"
+                                id="logo"/>
+            </div>
+            <h:form styleClass="page-header-nav">
+                <div class="page-header-nav-link-container">
+                    <h:commandLink rendered="#{userController.currentUser.id!=null}" styleClass="nav-link" action="#{navigationController.showUserPage(userController.currentUser.id)}" value = "My page">
+                    </h:commandLink >
+                    <h:commandLink rendered="#{userController.currentUser.id==null}" styleClass="nav-link" action="#{navigationController.showLogin}" value = "Sign in">
+                    </h:commandLink>
+                </div>
+
+                <div class="page-header-nav-link-container">
+                    <h:commandLink styleClass="nav-link" action="#{navigationController.showFeed}" value = "Feed">
+                    </h:commandLink>
+                </div>
+
+                <h:panelGroup class="page-header-nav-link-container" layout="block" rendered="#{userController.currentUser.id!=null}">
+                    <h:commandLink  styleClass="nav-link" action="#{userController.logOut()}" value = "Sign out">
+                    </h:commandLink>
+                </h:panelGroup>
+
+            </h:form>
+        </div>
+    </div>
+</div>
+</html>

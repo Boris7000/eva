@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="eva:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>eva</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="eva-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="eva:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="../../templates/templLayout.xhtml">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8;"/>
+    </h:head>
+
+    <ui:define name="content-placeholder">
+
+        <f:view>
+            <h:panelGroup class="card" style="width: 550px">
+
+                <h:form id="edit-form">
+
+                    <ui:include src="../../templates/base-components/auth/info-inputs.xhtml"/>
+
+                    <h:commandButton value="Update profile info"
+                                     id="edit-btn"
+                                     styleClass="btn-primary"
+                                     action="#{userController.updateUserInfo()}">
+                        <f:ajax execute="@form" render="@all" />
+                    </h:commandButton>
+                </h:form>
+            </h:panelGroup>
+
+        </f:view>
+    </ui:define>
+</ui:composition>
+
+</html>
